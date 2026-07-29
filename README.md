@@ -118,13 +118,6 @@ app/
 └── Config/
 ```
 
-- Login Page
-- Dashboard
-- Employee List
-- Employee Create
-- Employee Edit
-- User Profile
-
 ---
 
 ## Author
