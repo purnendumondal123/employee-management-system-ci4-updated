@@ -105,6 +105,8 @@ $routes->group('employees', ['filter' => 'admin'], function ($routes) {
     $routes->post('delete/(:num)', 'EmployeeController::delete/$1');
 
     $routes->post('datatable', 'EmployeeController::datatable');
+
+    $routes->get('export-csv', 'EmployeeController::exportCsv');
 });
 
 /*

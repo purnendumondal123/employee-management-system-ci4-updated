@@ -382,4 +382,51 @@ class EmployeeController extends BaseController
 
         ]);
     }
+
+    public function exportCsv()
+    {
+        // die("HELLO EXPORT");
+        
+        $employees = $this->employeeModel
+            ->where('deleted_at', null)
+            ->findAll();
+
+        header('Content-Type: text/csv');
+        header('Content-Disposition: attachment; filename="employees.csv"');
+
+        $output = fopen('php://output', 'w');
+
+        fputcsv($output, [
+            'SL No',
+            'Employee Code',
+            'Name',
+            'Email',
+            'Mobile',
+            'Status'
+        ]);
+
+        $sl = 1;
+
+        foreach ($employees as $employee) {
+
+            fputcsv($output, [
+
+                $sl++,
+
+                $employee['employee_code'],
+
+                $employee['first_name'] . ' ' . $employee['last_name'],
+
+                $employee['email'],
+
+                $employee['mobile'],
+
+                ucfirst($employee['status'])
+
+            ]);
+        }
+
+        fclose($output);
+        exit;
+    }
 }

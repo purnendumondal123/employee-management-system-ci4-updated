@@ -120,8 +120,25 @@ app/
 
 ---
 
+## Latest Updates
+
+This project has been updated to address the review feedback and improve the overall functionality.
+
+### Fixed & Improved
+
+- Added proper frontend and backend validation for Joining Date and Date of Birth.
+- Fixed the photo upload logic to prevent false success messages when no image is selected.
+- Removed the unnecessary "Action" column from CSV exports.
+- Added Employee Edit functionality for Admin users.
+- Added default Admin credentials in the README.
+- Integrated jQuery DataTables with server-side processing.
+- Improved project documentation and installation guide.
+- Fixed validation issues and other minor bugs.
+
 ## Author
 
 **Purnendu Mondal**
+https://github.com/purnendumondal123
 
+## project repository
 GitHub: https://github.com/purnendumondal123/employee-management-system-ci4-updated

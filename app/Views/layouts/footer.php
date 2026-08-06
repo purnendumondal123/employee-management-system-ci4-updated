@@ -16,52 +16,50 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
 
-<script>
-$(function () {
+<?= $this->renderSection('scripts') ?>
+<!-- <script>
+    $(function() {
 
-    if ($('#employeeTable').length) {
+        if ($('#employeeTable').length) {
 
-        $('#employeeTable').DataTable({
+            $('#employeeTable').DataTable({
 
-            processing: true,
-            serverSide: true,
-            responsive: true,
+                processing: true,
+                serverSide: true,
+                responsive: true,
 
-            ajax: {
-                url: "<?= site_url('employees/datatable') ?>",
-                type: "POST"
-            },
+                ajax: {
+                    url: "<?= site_url('employees/datatable') ?>",
+                    type: "POST"
+                },
 
-            pageLength: 10,
+                pageLength: 10,
 
-            lengthMenu: [
-                [10,25,50,100],
-                [10,25,50,100]
-            ],
+                lengthMenu: [
+                    [10, 25, 50, 100],
+                    [10, 25, 50, 100]
+                ],
 
-            dom: 'Bfrtip',
+                dom: 'Bfrtip',
 
-            buttons: [
-                {
+                buttons: [{
                     extend: 'csv',
                     text: 'Export CSV'
-                }
-            ],
+                }],
 
-            columnDefs: [
-                {
+                columnDefs: [{
                     targets: [6],
                     orderable: false,
                     searchable: false
-                }
-            ]
+                }]
 
-        });
+            });
 
-    }
+        }
 
-});
-</script>
+    });
+</script> -->
 
 </body>
+
 </html>

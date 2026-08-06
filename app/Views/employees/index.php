@@ -55,7 +55,7 @@
                                 <th>Email</th>
                                 <th>Mobile</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th class="no-export">Action</th>
 
                             </tr>
 
@@ -77,6 +77,7 @@
 
 </div>
 
+<?= $this->section('scripts') ?>
 <script>
     $(document).ready(function() {
 
@@ -104,8 +105,10 @@
             dom: 'Bfrtip',
 
             buttons: [{
-                extend: 'csv',
-                text: 'Export CSV'
+                text: 'Export CSV',
+                action: function(e, dt, node, config) {
+                    window.location.href = "<?= site_url('employees/export-csv') ?>";
+                }
             }],
 
             columnDefs: [{
@@ -122,5 +125,6 @@
 
     });
 </script>
+<?= $this->endSection() ?>
 
 <?= $this->include('layouts/footer') ?>
