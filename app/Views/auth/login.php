@@ -55,7 +55,7 @@
 
                         <div class="mb-3">
 
-                            <label class="form-label">
+                            <label for="email" class="form-label">
 
                                 Email
 
@@ -73,7 +73,7 @@
 
                         <div class="mb-3">
 
-                            <label class="form-label">
+                            <label for="password" class="form-label">
 
                                 Password
 
@@ -224,15 +224,17 @@
 
                 },
 
-                error: function() {
+                error: function(xhr) {
+
+                    console.log("Status:", xhr.status);
+                    console.log("Response:", xhr.responseText);
 
                     $('#loginBtn').prop('disabled', false);
                     $('#loginBtn').text('Login');
 
                     $('#responseMessage').html(
-                        '<div class="alert alert-danger">Something went wrong.</div>'
+                        '<div class="alert alert-danger">' + xhr.responseText + '</div>'
                     );
-
                 }
 
             });
